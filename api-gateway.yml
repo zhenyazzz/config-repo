@@ -5,13 +5,6 @@ spring:
   application:
     name: api-gateway
   cloud:
-    config:
-      uri: http://config-service:8888
-      fail-fast: true
-      retry:
-        initial-interval: 1000
-        max-interval: 2000
-        max-attempts: 6
     gateway:
       discovery:
         locator:
@@ -109,19 +102,16 @@ eureka:
   instance:
     prefer-ip-address: true
 
-# JWT настройки
 jwt:
   secret-key: aXv7j3tR8kL9mQp2sV5y7x9A1zC4E7H0bW3cZ6u8oP1dF4rT5nJ9iK2lO0q
   access-token-expiration: 86400000
   issuer: api-gateway
 
-# Логирование
 logging:
   level:
     org.springframework.cloud.gateway: INFO
     org.com.apigateway: DEBUG
 
-# Actuator для мониторинга
 management:
   endpoints:
     web:
@@ -132,7 +122,6 @@ management:
     health:
       show-details: always
 
-# Resilience4j circuit breaker config
 resilience4j:
   circuitbreaker:
     instances:
