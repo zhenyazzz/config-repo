@@ -1,3 +1,6 @@
+server:
+  port: ${PRODUCT_PORT:8083}
+  
 spring:
   application:
     name: product-service
@@ -27,12 +30,10 @@ spring:
       port: ${REDIS_PORT:6379}
       password: ${REDIS_PASSWORD:}  
   kafka:
-    bootstrap-servers: ${KAFKA_SERVERS:localhost:9092}
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:kafka-broker:29092}
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
-  
-
 
 eureka:
   client:
@@ -42,9 +43,6 @@ eureka:
     fetch-registry: true
   instance:
     prefer-ip-address: true
-
-server:
-  port: ${SERVER_PORT:8083}
 
 logging:
   level:
