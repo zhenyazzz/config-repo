@@ -16,7 +16,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
   kafka:
-    bootstrap-servers: ${KAFKA_HOST:kafka-broker}:${KAFKA_PORT:29092}
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:kafka-broker:29092}
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -50,4 +50,5 @@ jwt:
   header: Authorization
   prefix: Bearer
   token-type: JWT
+
 
