@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: ${AUTH_PORT:8081}
 
 spring:
   application:
@@ -24,7 +24,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://${EUREKA_HOST:eureka-service}:${EUREKA_PORT:8761}/eureka/
+      defaultZone: ${EUREKA_URL:http://eureka-service:8761/eureka/}
   instance:
     prefer-ip-address: true
 
@@ -50,3 +50,4 @@ jwt:
   header: Authorization
   prefix: Bearer
   token-type: JWT
+
