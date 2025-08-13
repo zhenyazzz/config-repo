@@ -4,10 +4,6 @@ server:
 spring:
   application:
     name: product-service
-  cloud:
-    config:
-      uri: ${CONFIG_SERVER_URI:http://localhost:8888}
-      fail-fast: false
   datasource:
     url: jdbc:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5432}/${DATABASE_NAME:marketly_product_db}
     username: ${DATABASE_USER:postgres}
