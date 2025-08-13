@@ -1,3 +1,5 @@
+server:
+  port: ${USER_PORT:8082}
 spring:
   application:
     name: user-service
@@ -6,7 +8,7 @@ spring:
       uri: ${CONFIG_SERVER_URI:http://localhost:8888}
       fail-fast: false
   datasource:
-    url: jdbc:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5432}/${DATABASE_NAME:marketly_userservice_db}
+    url: jdbc:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5432}/${DATABASE_NAME:marketly_user_db}
     username: ${DATABASE_USER:postgres}
     password: ${DATABASE_PASSWORD:root}
   jpa:
@@ -17,28 +19,19 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
   kafka:
-    bootstrap-servers: ${KAFKA_SERVERS:localhost:9092}
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:kafka-broker:29092}
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
-  security:
-    user:
-      name: ${SECURITY_USER:admin}
-      password: ${SECURITY_PASSWORD:admin}
-      roles: ${SECURITY_ROLES:ADMIN}
 
 eureka:
   client:
     service-url:
-      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka/}
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
     register-with-eureka: true
     fetch-registry: true
   instance:
     prefer-ip-address: true
-
-# Fallback конфигурация (если Config Server недоступен)
-server:
-  port: ${SERVER_PORT:8082}
 
 logging:
   level:
@@ -60,3 +53,4 @@ springdoc:
     tagsSorter: alpha
   api-docs:
     path: /v3/api-docs
+
