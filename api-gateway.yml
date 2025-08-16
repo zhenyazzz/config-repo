@@ -94,11 +94,13 @@ spring:
 
 eureka:
   client:
-    service-url:
-      defaultZone: ${EUREKA_URL:http://eureka-service:8761/eureka/}
+    serviceUrl:
+      defaultZone: http://eureka-service:8761/eureka/
+    registerWithEureka: true 
+    fetchRegistry: true       
   instance:
-    prefer-ip-address: false
-    hostname: api-gateway
+    hostname: api-gateway     
+    preferIpAddress: false
 
 jwt:
   secret-key: ${JWT_SECRET_KEY:aXv7j3tR8kL9mQp2sV5y7x9A1zC4E7H0bW3cZ6u8oP1dF4rT5nJ9iK2lO0q}
