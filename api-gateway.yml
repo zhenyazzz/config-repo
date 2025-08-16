@@ -121,8 +121,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,gateway
-      base-path: /actuator
+        include: health,info
   endpoint:
     health:
       show-details: always
