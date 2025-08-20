@@ -112,10 +112,7 @@ jwt:
   token-type: JWT
 
 
-logging:
-  level:
-    org.springframework.cloud.gateway: INFO
-    org.com.apigateway: DEBUG
+
 
 management:
   endpoints:
