@@ -5,7 +5,7 @@ spring:
   application:
     name: auth-service
   datasource:
-    url: jdbc:postgresql://${DATABASE_HOST:postgres}:${DATABASE_PORT:5434}/${DATABASE_NAME:marketly_auth_db}
+    url: jdbc:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5434}/${DATABASE_NAME:marketly_auth_db}
     username: ${DATABASE_USER:postgres}
     password: ${DATABASE_PASSWORD:root}
   jpa:
@@ -24,7 +24,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: ${EUREKA_URL:http://eureka-service:8761/eureka/}
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
   instance:
     prefer-ip-address: true
 
@@ -50,6 +50,7 @@ jwt:
   header: Authorization
   prefix: Bearer
   token-type: JWT
+
 
 
 
