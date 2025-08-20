@@ -5,9 +5,9 @@ spring:
   application:
     name: auth-service
   datasource:
-    url: jdbc:postgresql://${DATABASE_HOST:postgres}:${DATABASE_PORT:5432}/${DATABASE_NAME:marketly_user_db}
+    url: jdbc:postgresql://${DATABASE_HOST:postgres}:${DATABASE_PORT:5434}/${DATABASE_NAME:marketly_auth_db}
     username: ${DATABASE_USER:postgres}
-    password: ${DATABASE_PASSWORD:postgres}
+    password: ${DATABASE_PASSWORD:root}
   jpa:
     hibernate:
       ddl-auto: update
@@ -50,5 +50,6 @@ jwt:
   header: Authorization
   prefix: Bearer
   token-type: JWT
+
 
 
