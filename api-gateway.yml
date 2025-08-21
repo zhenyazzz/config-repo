@@ -16,7 +16,7 @@ spring:
             - name: LoggingFilter
           routes:
             - id: auth-service
-              uri: http://auth-service:8081
+              uri: lb://auth-service
               predicates:
                 - Path=/api/auth/**
               filters:
