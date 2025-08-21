@@ -12,9 +12,11 @@ spring:
             locator:
               enabled: false
               lower-case-service-id: true
+          default-filters:
+            - name: LoggingFilter
           routes:
             - id: auth-service
-              uri: lb://auth-service
+              uri: http://auth-service:8081
               predicates:
                 - Path=/api/auth/**
               filters:
@@ -127,7 +129,10 @@ jwt:
   prefix: Bearer
   token-type: JWT
 
-
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
 
 
 management:
