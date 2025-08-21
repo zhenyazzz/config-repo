@@ -12,8 +12,6 @@ spring:
             locator:
               enabled: false
               lower-case-service-id: true
-          default-filters:
-            - name: LoggingFilter
           routes:
             - id: auth-service
               uri: lb://auth-service
