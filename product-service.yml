@@ -5,7 +5,7 @@ spring:
   application:
     name: product-service
   datasource:
-    url: jdbc:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5432}/${DATABASE_NAME:marketly_product_db}
+    url: jdbc:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5434}/${DATABASE_NAME:marketly_product_db}
     username: ${DATABASE_USER:postgres}
     password: ${DATABASE_PASSWORD:root}
   jpa:
@@ -24,7 +24,7 @@ spring:
   redis:
       host: ${REDIS_HOST:localhost}
       port: ${REDIS_PORT:6379}
-      password: ${REDIS_PASSWORD:}  
+      password: ${REDIS_PASSWORD:root}  
   kafka:
     bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
     producer:
