@@ -28,11 +28,7 @@ spring:
               uri: lb://user-service
               predicates:
                 - Path=/api/users/**
-              filters:
-                - name: CircuitBreaker
-                  args:
-                    name: userServiceCircuitBreaker
-                    fallbackUri: forward:/fallback/user
+              
 
             - id: product-service
               uri: lb://product-service
