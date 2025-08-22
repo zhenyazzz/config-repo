@@ -22,12 +22,15 @@ spring:
                   args:
                     name: authServiceCircuitBreaker
                     fallbackUri: forward:/fallback/auth
-
-
             - id: user-service
               uri: lb://user-service
               predicates:
                 - Path=/api/users/**
+              filters:
+                - name: CircuitBreaker
+                  args:
+                    name: userServiceCircuitBreaker
+                    fallbackUri: forward:/fallback/user
               
 
             - id: product-service
