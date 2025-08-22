@@ -32,7 +32,8 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
   instance:
-    prefer-ip-address: true
+    hostname: user-service
+    preferIpAddress: false
 
 logging:
   level:
@@ -54,6 +55,7 @@ springdoc:
     tagsSorter: alpha
   api-docs:
     path: /v3/api-docs
+
 
 
 
