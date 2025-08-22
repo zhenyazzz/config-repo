@@ -29,8 +29,6 @@ spring:
               predicates:
                 - Path=/api/users/**
               filters:
-                - StripPrefix=1
-                - name: JwtAuthenticationFilter
                 - name: CircuitBreaker
                   args:
                     name: userServiceCircuitBreaker
