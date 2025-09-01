@@ -50,8 +50,6 @@ spring:
               predicates:
                 - Path=/api/cart/**
               filters:
-                - StripPrefix=1
-                - name: JwtAuthenticationFilter
                 - name: CircuitBreaker
                   args:
                     name: cartServiceCircuitBreaker
